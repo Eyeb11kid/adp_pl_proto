@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Pipeline Metrics</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, "Segoe UI", system-ui, sans-serif; background: #F0F2F5; color: #1F2328; font-size: 14px; line-height: 1.6; padding: 24px 28px; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    h1 { font-size: 20px; color: #1E2761; }
+    .sub { font-size: 12px; color: #57606A; margin-bottom: 18px; }
+    .note { background: #FFFBEB; border-left: 4px solid #D97706; padding: 10px 14px; border-radius: 6px; font-size: 12px; margin-bottom: 18px; }
+    .card { background: #fff; border: 1px solid #E5E7EB; border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; overflow-x: auto; }
+    .card h2 { font-size: 15px; color: #1E2761; }
+    .card .desc { font-size: 12px; color: #57606A; margin-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { background: #1E2761; color: #fff; padding: 10px 12px; font-size: 12px; font-weight: 600; text-align: right; }
+    th:first-child, td:first-child { text-align: left; }
+    td { padding: 8px 12px; text-align: right; border-bottom: 1px solid #F3F4F6; }
+    tbody tr:nth-child(even) td { background: #F7F8FA; }
+    tr.total td { background: #DBEAFE !important; font-weight: 700; }
+    .up { color: #166534; font-weight: 600; }
+    .down { color: #991B1B; font-weight: 600; }
+    td.insight { text-align: left; color: #374151; }
+    th.insight { text-align: left; }
+    .footer { text-align: center; font-size: 11px; color: #57606A; padding-top: 10px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Sales Pipeline Metrics</h1>
+  <div class="sub">Jan – Jun 2025</div>
+  <div class="note"><strong>Illustrative data.</strong> All figures are placeholders; replace them with your CRM extract. Months in pipe = pipeline value ÷ trailing average monthly sales.</div>
+
+  <!-- 1. Pipeline value -->
+  <div class="card">
+    <h2>1. Pipeline Value ($M)</h2>
+    <div class="desc">Growth YoY, growth vs last month, and months of sales in pipe</div>
+    <table>
+      <thead>
+        <tr><th>Month</th><th>Pipeline ($M)</th><th>% Growth YoY</th><th>% Growth vs Last Month</th><th>Avg Monthly Sales ($M)</th><th>Months of Sales in Pipe</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Jan</td><td>118.0</td><td class="up">+15.2%</td><td class="up">+2.6%</td><td>36.0</td><td>3.3</td></tr>
+        <tr><td>Feb</td><td>121.5</td><td class="up">+15.6%</td><td class="up">+3.0%</td><td>36.4</td><td>3.3</td></tr>
+        <tr><td>Mar</td><td>126.2</td><td class="up">+15.9%</td><td class="up">+3.9%</td><td>37.1</td><td>3.4</td></tr>
+        <tr><td>Apr</td><td>124.8</td><td class="up">+11.8%</td><td class="down">-1.1%</td><td>37.5</td><td>3.3</td></tr>
+        <tr><td>May</td><td>131.4</td><td class="up">+16.3%</td><td class="up">+5.3%</td><td>38.0</td><td>3.5</td></tr>
+        <tr class="total"><td>Jun</td><td>137.9</td><td>+17.7%</td><td>+4.9%</td><td>38.6</td><td>3.6</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. Win vs loss by competitor -->
+  <div class="card">
+    <h2>2. Win Rate vs Loss Rate by Competitor</h2>
+    <div class="desc">Decided deals, YTD</div>
+    <table>
+      <thead>
+        <tr><th>Competitor</th><th>Deals</th><th>Won</th><th>Lost</th><th>Win Rate</th><th>Loss Rate</th><th>Win – Loss (pts)</th><th class="insight">Insight</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Competitor A</td><td>42</td><td>19</td><td>23</td><td>45.2%</td><td>54.8%</td><td class="down">-9.6</td><td class="insight">Losing more than winning; review pricing and positioning</td></tr>
+        <tr><td>Competitor B</td><td>35</td><td>21</td><td>14</td><td>60.0%</td><td>40.0%</td><td class="up">+20.0</td><td class="insight">Strong position; maintain</td></tr>
+        <tr><td>Competitor C</td><td>28</td><td>11</td><td>17</td><td>39.3%</td><td>60.7%</td><td class="down">-21.4</td><td class="insight">Weakest matchup; priority for battlecard refresh</td></tr>
+        <tr><td>Competitor D</td><td>24</td><td>15</td><td>9</td><td>62.5%</td><td>37.5%</td><td class="up">+25.0</td><td class="insight">Strong position; maintain</td></tr>
+        <tr><td>No competitor / status quo</td><td>51</td><td>33</td><td>18</td><td>64.7%</td><td>35.3%</td><td class="up">+29.4</td><td class="insight">Best conversion; losses are mainly "no decision"</td></tr>
+        <tr class="total"><td>Total</td><td>180</td><td>99</td><td>81</td><td>55.0%</td><td>45.0%</td><td>+10.0</td><td class="insight"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. Avg days in pipe -->
+  <div class="card">
+    <h2>3. Average Days in Pipe</h2>
+    <div class="desc">By stage, current quarter vs prior quarter</div>
+    <table>
+      <thead>
+        <tr><th>Stage</th><th>Current Qtr (days)</th><th>Prior Qtr (days)</th><th>Change (days)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Qualify</td><td>12</td><td>13</td><td class="up">-1</td></tr>
+        <tr><td>Discovery</td><td>18</td><td>17</td><td class="down">+1</td></tr>
+        <tr><td>Proposal</td><td>26</td><td>29</td><td class="up">-3</td></tr>
+        <tr><td>Negotiation</td><td>21</td><td>24</td><td class="up">-3</td></tr>
+        <tr><td>Close</td><td>14</td><td>15</td><td class="up">-1</td></tr>
+        <tr class="total"><td>Total cycle</td><td>91</td><td>98</td><td>-7</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Net new pipeline -->
+  <div class="card">
+    <h2>4. New Opportunities Created vs Opportunities Lost</h2>
+    <div class="desc">Net new pipeline in units and $M</div>
+    <table>
+      <thead>
+        <tr><th>Month</th><th>Created (units)</th><th>Created ($M)</th><th>Lost (units)</th><th>Lost ($M)</th><th>Net New (units)</th><th>Net New ($M)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Jan</td><td>64</td><td>21.5</td><td>38</td><td>11.2</td><td class="up">+26</td><td class="up">+10.3</td></tr>
+        <tr><td>Feb</td><td>61</td><td>20.8</td><td>35</td><td>10.9</td><td class="up">+26</td><td class="up">+9.9</td></tr>
+        <tr><td>Mar</td><td>70</td><td>24.6</td><td>40</td><td>12.1</td><td class="up">+30</td><td class="up">+12.5</td></tr>
+        <tr><td>Apr</td><td>58</td><td>19.4</td><td>52</td><td>20.8</td><td class="up">+6</td><td class="down">-1.4</td></tr>
+        <tr><td>May</td><td>72</td><td>25.9</td><td>41</td><td>11.8</td><td class="up">+31</td><td class="up">+14.1</td></tr>
+        <tr><td>Jun</td><td>75</td><td>27.3</td><td>44</td><td>13.0</td><td class="up">+31</td><td class="up">+14.3</td></tr>
+        <tr class="total"><td>Total</td><td>400</td><td>139.5</td><td>250</td><td>79.8</td><td>+150</td><td>+59.7</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">Sales Pipeline Metrics · illustrative data</div>
+</div>
+</body>
+</html>
